@@ -1,0 +1,31 @@
+local opt = vim.opt
+opt.history = 500
+opt.regexpengine = 0
+opt.wildmenu = true
+opt.wildmode = { "list", "longest", "full" }
+opt.wildoptions = "pum"
+opt.wildignore = {
+  "*.o", "*~", "*.pyc", "*/.git/*", "*/.hg/*", "*/.svn/*", "*/.DS_Store"
+}
+opt.swapfile = false
+opt.ruler = true
+opt.showmatch = true
+opt.cmdheight = 1
+opt.autoindent = true
+opt.encoding = "utf-8"
+opt.hlsearch = true
+opt.mouse = "nv"
+opt.relativenumber = true
+opt.ignorecase = true
+opt.expandtab = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.wrap = false
+opt.errorbells = false
+opt.autochdir = true
+opt.scrolloff = 3
+opt.foldenable = true
+opt.foldmethod = "manual"
+opt.foldcolumn = "1"
+opt.foldlevel = 5
+opt.termguicolors = true
