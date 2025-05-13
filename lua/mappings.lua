@@ -79,7 +79,7 @@ map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 map('n', '<leader>fs', function() vim.lsp.buf.format() end, opts)
 
 -- Show diagnostic messages
-map('n', '<C-e>"', vim.diagnostic.open_float, opts)
+map('n', '<leader>z"', vim.diagnostic.open_float, opts)
 
 -- Navigate to the next diagnostic
 map('n', '<leader>n', vim.diagnostic.goto_next, opts)
