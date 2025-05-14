@@ -33,6 +33,7 @@ map("n", "<C-l>", "<C-W>l", opts)
 
 -- Buffers
 map("n", "<leader>b", ":buffers<CR>:buffer ", opts)
+vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', opts)
 map("n", "<leader>e", ":e<CR>:e", opts)
 
 -- Replace
