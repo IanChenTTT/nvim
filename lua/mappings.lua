@@ -15,6 +15,10 @@ map("n", "<leader>tn", ":tabnext<CR>", opts)
 map('n', '<leader>tt', function()
   vim.cmd('tabnew | terminal')
 end, { noremap = true, silent = true })
+ 
+map('n', '<leader>t', function()
+  vim.cmd('Floaterminal')
+end, { noremap = true, silent = true })
 
 -- Terminal with make
 map("n", "<leader>m", ":vert :term make<CR><C-W><C-W>", opts)
@@ -51,11 +55,17 @@ vim.cmd([[
 vim.api.nvim_create_user_command('MyMap', function()
   vim.cmd('e /home/ian/.config/nvim/lua/mappings.lua')
 end, {})
+--
+-- left explorer
+map('n', '<leader>l', function()
+  vim.cmd('30Vexplore!')
+end, opts)
+
 -- Copy current file's full path to clipboard in terminal mode
 map('n', '<leader>cp', function()
   vim.fn.setreg('+', vim.fn.expand('%:p'))
   print('File path copied to clipboard: ' .. vim.fn.expand('%:p'))
-end, { noremap = true, silent = true })
+end, opts)
 
 -- 
 -- Go to definition
