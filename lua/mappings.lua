@@ -37,7 +37,8 @@ map("n", "<C-l>", "<C-W>l", opts)
 
 -- Buffers
 map("n", "<leader>b", ":buffers<CR>:buffer ", opts)
-vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', opts)
+map('n', '<Leader>bb', '<C-^>', opts)
+map('n', '<leader>bd', '<cmd>bdelete<CR>', opts)
 map("n", "<leader>e", ":e<CR>:e", opts)
 
 -- Replace
@@ -53,7 +54,7 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_user_command('MyMap', function()
-  vim.cmd('e /home/ian/.config/nvim/lua/mappings.lua')
+  vim.cmd('e ~/.config/nvim/lua/mappings.lua')
 end, {})
 --
 -- left explorer
@@ -99,6 +100,3 @@ map('n', '<leader>n', vim.diagnostic.goto_next, opts)
 map('n', '<leader>p', vim.diagnostic.goto_prev, opts)
 
 map('n', '<leader>v', '<C-v>', { noremap = true })
-
-
-
