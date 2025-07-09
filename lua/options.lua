@@ -29,3 +29,4 @@ opt.foldmethod = "manual"
 opt.foldcolumn = "1"
 opt.foldlevel = 5
 opt.termguicolors = true
+opt.numberwidth = 1

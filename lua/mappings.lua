@@ -100,3 +100,7 @@ map('n', '<leader>n', vim.diagnostic.goto_next, opts)
 map('n', '<leader>p', vim.diagnostic.goto_prev, opts)
 
 map('n', '<leader>v', '<C-v>', { noremap = true })
+
+map('n', '<Leader>=', '<C-w>=', { noremap = true, silent = true, desc = 'Equalize splits' })
+map('n', '<Leader>z', '<C-w>_<C-w>|', { noremap = true, silent = true, desc = 'Maximize current split' })
+
