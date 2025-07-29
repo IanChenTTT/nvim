@@ -88,13 +88,14 @@ map('n', '<leader>rn', vim.lsp.buf.rename, opts)
 map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
 -- Format code
-map('n', '<leader>fs', function() vim.lsp.buf.format() end, opts)
+map({"n","v"}, '<leader>fs', function() vim.lsp.buf.format() end, opts)
 
 -- Show diagnostic messages
 map('n', '<leader>z"', vim.diagnostic.open_float, opts)
 
 -- Navigate to the next diagnostic
 map('n', '<leader>n', vim.diagnostic.goto_next, opts)
+map('n', '<leader>nh', ':noh<CR>', opts)
 
 -- Navigate to the previous diagnostic
 map('n', '<leader>p', vim.diagnostic.goto_prev, opts)
