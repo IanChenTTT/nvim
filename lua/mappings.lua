@@ -40,10 +40,14 @@ map("n", "<leader>b", ":buffers<CR>:buffer ", opts)
 map('n', '<Leader>bb', '<C-^>', opts)
 map('n', '<leader>bd', '<cmd>bdelete<CR>', opts)
 map("n", "<leader>e", ":e<CR>:e", opts)
+-- Copy the selected text to the system clipboard in normal mode
+map({"n","v"}, '<leader>y', '"+y', { noremap = true, silent = true })
+map({"n","v"}, '<leader>pp', '"+p', { desc = 'Paste from system clipboard' })
 
 -- Replace
 map("n", "<leader>rw", ":%s/Hello/HI/gc<CR>", opts)
 map("n", "<leader>rwc", ":%s/old/new/c<CR>", opts)
+
 
 -- Insert mode escape
 map("i", "jk", "<ESC>", opts)
@@ -87,11 +91,14 @@ map('n', '<leader>rn', vim.lsp.buf.rename, opts)
 -- Code action
 map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
--- Format code
-map({"n","v"}, '<leader>fs', function() vim.lsp.buf.format() end, opts)
+-- Format code map({"n","v"}, '<leader>f', function() vim.lsp.buf.format() end, opts) File action
+map({"n","v"}, '<leader>fs', ':Pick files<CR>', opts)
+map({"n","v"}, '<leader>fg', ':Pick grep_live<CR>', opts)
+
 
 -- Show diagnostic messages
 map('n', '<leader>z"', vim.diagnostic.open_float, opts)
+
 
 -- Navigate to the next diagnostic
 map('n', '<leader>n', vim.diagnostic.goto_next, opts)
@@ -103,5 +110,5 @@ map('n', '<leader>p', vim.diagnostic.goto_prev, opts)
 map('n', '<leader>v', '<C-v>', { noremap = true })
 
 map('n', '<Leader>=', '<C-w>=', { noremap = true, silent = true, desc = 'Equalize splits' })
-map('n', '<Leader>z', '<C-w>_<C-w>|', { noremap = true, silent = true, desc = 'Maximize current split' })
+map('n', '<Leader>zz', '<C-w>_<C-w>|', { noremap = true, silent = true, desc = 'Maximize current split' })
 
